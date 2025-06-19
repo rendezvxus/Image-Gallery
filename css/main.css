@@ -104,7 +104,7 @@ input::placeholder {
     justify-items: center; 
     align-items: center; 
     height: 64px; 
-    width:clamp(100px, 95vw, 684px); 
+    width:clamp(100px, 85vw, 684px); 
     background: #3939390e; 
     margin-top: 7%; 
     border-radius: 16px;
@@ -117,15 +117,15 @@ input::placeholder {
 }
 
 .image-block {
-    display: flex;           /* Располагает картинки в ряд */
-    flex-wrap: wrap;         /* Позволяет переносить на новую строку */
-    gap: 10px;               /* Отступы между картинками */
-    justify-content: center; /* Центрирование блока */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 25px;
 }
 
 .image-block img {
-  width: 150px;            /* Ширина каждой картинки */
-  height: 150px;           /* Высота (можно auto для пропорций) */
-  object-fit: cover;       /* Обрезка по размеру блока */
-  border-radius: 8px;      /* Скругление углов (по желанию) */
+    width: 100%;
+    height: 244px;
+    background-color: red;
+    transition: transform 0.3s ease;
+    display: block;
 }
