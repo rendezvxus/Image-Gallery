@@ -1,6 +1,6 @@
 import { ACCESS_KEY } from '../config.js';
   
-    const IMAGE_COUNT = 1;
+    const IMAGE_COUNT = 12;
     const imageBlock = document.getElementById('unsplash-imgs');
     const searchInput = document.querySelector('.search');
     const searchButton = document.getElementById('search-button');
@@ -71,4 +71,4 @@ import { ACCESS_KEY } from '../config.js';
         getImages(query);
     });
 
-    //getImages()
+    getImages()
