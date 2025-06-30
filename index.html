@@ -9,26 +9,123 @@
 </head>
 
 <body>
-    <header class="container, head">
-        <span class="logo">
-            <img class ="ms-gallery-logo" src="/img/ms_gallery.png">
-            <a class='href-gallery' href="#gallery">Gallery</a>
-        </span>
-    </header>
-    <div class="container">
+
+    <div class="blurred">
+        <header class="head">
+            <span class="logo">
+                <img class ="ms-gallery-logo" src="/img/ms_gallery.png">
+                <a class='href-gallery' style="text-decoration: none;" href="#gallery">Gallery</a>
+            </span>
+        </header>
+    
         <div class="slogan-container">
+    
             <h1 class="slogan">Let's Find Some
-                <span style="color: #F17900;">Images</span>
+                <span style="color: var(--color-accent)">Images</span>
                 Here!
-            </h1>   
+            </h1>
+    
             <div class="searchbox">
                 <input class="search" placeholder="Search High Resolution Images"></input>
-                <div style="margin-right: 16px;">
-                    <img class="search-button" src="/img/search.png">
+                <button id="search-button" class="search-button">
+                    <img src="/img/search.png">
+                </button>
+            </div>
+    
+            <div id="invalid-prompt" class="invalid-prompt">
+                <span>Your prompt must be less than 20 symbols and can only contain letters, numbers and symbols like 
+                    ! $ & * - = ^ ` | ~ # % ' + / ? _ { }
+                </span>
+            </div>
+            
+            <div id="gallery" class="gallery-wrapper">
+                <div id="unsplash-imgs" class="image-block">
                 </div>
             </div>
         </div>
+          
+        <footer class="foot">
+            <div class="ft-info-wrapper">
+                <div class="ft-ms-gallery-info">
+                    <img src="/img/ms_gallery.png" alt="" class="ft-modsen">
+                    <span class="ft-text">We have images that capture every mood and inspire every vision. From breathtaking landscapes to vibrant portraits.</span>
+                    <div class="social-buttons">
+                        <button class="link-button">
+                            <img src="img/x.png" alt="x" class="social-icon">
+                        </button>
+                        <button class="link-button">
+                            <img src="img/f.png" alt="fb" class="social-icon">
+                        </button>
+                        <button class="link-button">
+                            <img src="img/ig.png" alt="ig" class="social-icon">
+                        </button>
+                        <button class="link-button">
+                            <img src="img/git.png" alt="git" class="social-icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="ft-col-wrapper">
+                    <span class="ft-col-head">COMPANY</span>
+                    <div class="ft-col-wrapper">
+                        <a href="about" class="ft-col-ref">About</a>
+                        <a href="features" class="ft-col-ref">Features</a>
+                        <a href="works" class="ft-col-ref">Works</a>
+                        <a href="carrier" class="ft-col-ref">Carrier</a>
+                    </div>
+                </div>
+                <div class="ft-col-wrapper">
+                    <span class="ft-col-head">HELP</span>
+                    <div class="ft-col-wrapper">
+                        <a href="customer_support" class="ft-col-ref">Customer Support</a>
+                        <a href="delivery_details" class="ft-col-ref">Delivery Details</a>
+                        <a href="terms_and_conditions" class="ft-col-ref">Terms & Conditions</a>
+                        <a href="privacy_policy" class="ft-col-ref">Privacy Policy</a>
+                    </div>
+                </div>
+                <div class="ft-col-wrapper">
+                    <span class="ft-col-head">FAQ</span>
+                    <div class="ft-col-wrapper">
+                        <a href="account" class="ft-col-ref">Account</a>
+                        <a href="manage_delivers" class="ft-col-ref">Manage Delivers</a>
+                        <a href="orders" class="ft-col-ref">Orders</a>
+                        <a href="payments" class="ft-col-ref">Payments</a>
+                    </div>
+                </div>
+                <div class="ft-col-wrapper">
+                    <span class="ft-col-head">RESOURCES</span>
+                    <div class="ft-col-wrapper">
+                        <a href="ebooks" class="ft-col-ref">Free eBooks</a>
+                        <a href="devtutorial" class="ft-col-ref">Development Tutorial</a>
+                        <a href="htblog" class="ft-col-ref">How to - Blog</a>
+                        <a href="ytpl" class="ft-col-ref">Youtube Playlist</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carr-wrapper">
+                <span class="carr">Modsen.gallery &copy; 2000-2025, All Rights Reserved</span>
+            </div>
+        </footer>
     </div>
-    
+
+    <div id="carousel" class="modal"> 
+        <div class="modal-content">
+            <button id="prev-button" class="carousel-button">
+                <img src="img/arrow-left.png" alt="">
+            </button>
+            <div class="carousel-focus">
+                <img id="modal-img" src="img/placeholders/1.jpg" alt="">
+                <button class="modal-close">
+                    <img src="/img/cross.png" alt="Закрыть" class="close-icon">
+                </button>
+            </div>
+            <button id="next-button" class="carousel-button">
+                <img src="img/arrow-right.png" alt="">
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts/loadImg.js"  type="module"></script>
+    <script src="/scripts/carousel.js"></script>
 </body>
+  
 </html>
