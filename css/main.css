@@ -209,6 +209,7 @@
     font-weight: 400;
     display: flex;
     transition: var(--ease-transform);
+    text-decoration: none;
   }
 
   .href-gallery:hover {
