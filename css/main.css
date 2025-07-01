@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* === Определение тем === */
-
-:root {
-    /* Тёмная тема (по умолчанию) */
+  :root {
     --color-bg-main: #343333;
     --color-bg-secondary: #484848;
     --color-accent: #f17900;
@@ -19,10 +16,15 @@
     --color-search-bg: #3939391e;
     --color-border: #00000025;
     --color-danger: #ff0000ff;
+    
+    --ease-transform: transform 0.3s ease;
+    --ease-filter: filter 0.3s ease;
   }
   
-  /* === Базовые стили === */
-  
+  html {
+    scroll-behavior: smooth;
+  }
+
   *,
   *::before,
   *::after {
@@ -52,8 +54,6 @@
     font-weight: 700;
   }
   
-  /* === Хедер === */
-  
   .head {
     background: linear-gradient(90deg, var(--color-bg-main) 0%, var(--color-bg-secondary) 70%, var(--color-bg-main) 100%);
     width: 100%;
@@ -63,8 +63,6 @@
     align-items: center;
     padding: 0 5%;
   }
-  
-  /* === Футер === */
   
   .foot {
     background: linear-gradient(90deg, var(--color-bg-main) 0%, var(--color-bg-secondary) 70%, var(--color-bg-main) 100%);
@@ -116,7 +114,7 @@
   .social-icon {
     width: 50%;
     filter: brightness(0);
-    transition: filter 0.3s ease;
+    transition: var(--ease-filter);
   }
   
   .link-button {
@@ -128,7 +126,7 @@
     border-radius: 100px;
     border: 1px solid var(--color-border);
     background-color: var(--color-white);
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
   }
   
   .link-button:hover {
@@ -144,7 +142,7 @@
     display: flex;
     flex-direction: column;
     min-width: 150px;
-    max-width: 189px;
+    max-width: 200px;
   }
   
   .ft-col-head {
@@ -163,6 +161,11 @@
     margin-bottom: clamp(3.75px, 2vw, 15px);
     font-size: clamp(5px, 2vw, 20px);
     color: var(--color-text-muted);
+    transition:  var(--ease-transform);
+  }
+
+  .ft-col-ref:hover {
+    transform: translateX(5px);
   }
   
   .carr {
@@ -180,8 +183,6 @@
     padding-top: 10px;
     width: 80%;
   }
-  
-  /* === Логотип и навигация === */
   
   .logo {
     display: flex;
@@ -203,9 +204,12 @@
     font-size: 24px;
     font-weight: 400;
     display: flex;
+    transition: var(--ease-transform);
   }
-  
-  /* === Поиск === */
+
+  .href-gallery:hover {
+    transform: translateY(-2px);
+  }
   
   input::placeholder {
     color: var(--color-placeholder);
@@ -244,7 +248,7 @@
     margin-right: 16px;
     border: none;
     background: transparent;
-    transition: transform 0.1s ease;
+    transition: var(--ease-transform);
 
   }
   
@@ -272,8 +276,6 @@
   .invalid-prompt.show {
     visibility: visible;
   }
-  
-  /* === Галерея === */
 
   .slogan-container {
     display: flex;
@@ -304,7 +306,7 @@
     height: clamp(180px,20vw,245px);
     display: block;
     object-fit: cover;
-    transition: filter 0.2s ease;
+    transition: var(--ease-filter)
 }
   
 .image-block img:hover {
@@ -317,8 +319,6 @@
     max-width: 910px;
     box-sizing: border-box;
 }
-  
-  /* === Модальные окна === */
   
   .modal {
     display: none;
@@ -349,7 +349,7 @@
   
   .blurred.blur {
     filter: blur(4px);
-    transition: filter 0.3s ease;
+    transition: var(--ease-filter);
   }
   
   .modal-close {
@@ -364,7 +364,7 @@
   }
   
   .close-icon {
-    transition: filter 0.2s ease;
+    transition: var(--ease-filter);
   }
   
   .close-icon:hover {
@@ -382,13 +382,14 @@
     border-radius: 50px;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: var(--ease-transform)
   }
 
   .carousel-button:hover {
     transform: scale(1.15);
   }
 
+  .carousel-button:onclic
   
   .carousel-button img {
     width: 50%;
@@ -414,8 +415,6 @@
   .ft-modsen {
        width: 100%; 
   }
-
-  /* === Адаптивность === */
   
   @media (max-width: 700px) {
 
@@ -426,7 +425,7 @@
     .foot {
       justify-items: center;
       padding: 0 0 30px 0;
-      padding-top: 33px;
+      padding-top: 30px;
     }
   
     .ft-ms-gallery-info {
