@@ -321,7 +321,7 @@
 }
   
   .modal {
-    display: none;
+    display: flex;
     position: fixed;
     background-color: var(--color-black-alpha);
     z-index: 10;
@@ -389,8 +389,6 @@
     transform: scale(1.15);
   }
 
-  .carousel-button:onclic
-  
   .carousel-button img {
     width: 50%;
     vertical-align: middle;
